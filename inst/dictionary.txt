@@ -1,0 +1,125 @@
+sabermetrics Package Data Dictionary
+
+----------
+Hitting
+----------
+SINGLE - Singles
+DOUBLE - Doubles
+TRIPLE - Triples
+RBOE - Reached base on error
+AB - At Bats
+AB/GIDP - At-Bats per Grounded Into Double Play
+AB/HR - At-Bats per Home Run
+AB/RBI - At-Bats per Runs Batted In
+AO - Fly Outs
+AVG - Batting Average
+BB - Bases on Balls (Walks)
+CS - Caught Stealing
+G - Games Played
+GIDP - Ground into Double Plays
+GO - Ground Outs
+GO/AO - Ground Outs/Fly Outs
+GSH - Grand Slam Home Runs
+H - Hits
+HBP - Hit by Pitch
+HR - Home Runs
+IBB - Intentional Walks
+LIPS - Late Inning Pressure Situations
+LOB - Left On Base
+NP - Number of Pitches
+OBP - On-base Percentage
+OPS - On-base Plus Slugging Percentage
+PA/SO - Plate Appearances per Strikeout
+R - Runs Scored
+RBI - Runs Batted In
+SAC - Sacrifice Bunts
+SB% - Stolen Base Percentage
+SB - Stolen Bases
+SF - Sacrifice Flies
+SLG - Slugging Percentage
+SO - Strikeouts
+TB - Total Bases
+TP - Triple Play
+TPA - Total Plate Appearances
+XBH - Extra Base Hits
+
+----------
+Fielding
+----------
+A - Assists
+CS - Caught Stealing
+DER - Defensive Efficiency Rating
+DP - Double Plays
+E - Errors
+FPCT - Fielding Percentage
+G - Games Played
+INN - Innings Played
+OFA - Outfield Assists
+PB - Passed Balls
+PO - Putouts
+RF - Range Factor
+SB - Stolen Bases (allowed)
+TC - Total Chances
+TP - Triple Plays
+
+----------
+Pitching
+----------
+Pitching
+AO - Fly Outs
+APP - Appearances
+AVG - Opponents Batting Average
+BB - Bases on Balls (Walks)
+BB/9 - Walks per Nine Innings
+BF - Batters Faced
+BK - Balks
+BS - Blown Save
+CG - Complete Games
+CGL - Complete Game Losses
+CS - Caught Stealing
+ER - Earned Runs
+ERA - Earned Run Average
+G - Games Played
+GF - Games Finished
+GIDP - Grounded Into Double Plays
+GO - Ground Outs
+GO/AO - Ground Outs/ Fly Outs Ratio
+GS - Games Started
+GSH - Grand Slams
+H - Hits
+H/9 - Hits per Nine Innings
+HB - Hit Batsmen
+HLD - Hold
+HR - Home Runs
+I/GS - Innings Per Games Started
+IBB - Intentional Walks
+IP - Innings Pitched
+IRA - Inherited Runs Allowed
+K/9 - Strikeouts per Nine Innings
+K/BB - Strikeout/Walk Ratio
+L - Losses
+LIPS - Late Inning Pressure Situations
+LOB - Left on Base
+MB/9 - Baserunners per 9 Innings
+NP - Number of Pitches Thrown
+OBA - On-base Against
+PA - Plate Appearances
+P/GS - Pitches per Start
+P/IP - Pitches per Innings Pitched
+PK - Pick-offs
+R - Runs
+RW - Relief Wins
+SB - Stolen Bases
+SHO - Shutouts
+SLG - Slugging Percentage Allowed
+SO - Strikeouts
+SV - Saves
+SVO - Save Opportunities
+TB - Total Bases
+TP - Triple Plays
+UR - Unearned Runs
+W - Wins
+WHIP - Walks + Hits/Innings Pitched
+WP - Wild Pitches
+WPCT - Winning Percentage
+XBA - Extra Base Hits Allowed

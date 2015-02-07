@@ -1,0 +1,87 @@
+---
+title: "Sabermetrics Package Tutorial"
+author: "Peter Xenopoulos"
+date: "February 5, 2015"
+output: html_document
+---
+
+Thank you for viewing this Sabermetrics package tutorial. I hope you find this helpful, and good luck with your analysis!
+
+You may visit my site here: <http://www.peterxeno.com>.
+
+## Getting Started
+If you haven't already, please download and call the Sabermetrics package (as seen below.)
+
+```{r, eval=FALSE}
+# Install Sabermetrics
+install.packages("Sabermetrics")
+
+# Load Sabermetrics
+packages("Sabermetrics")
+```
+
+## Batting Statistics
+### Case Study: Mike Trout
+
+If you followed the 2014 MLB season, Mike Trout is a household name. The currently 23 year old outfielder for the Dodgers won MLB MVP of the year and is known for his hitting. Let's look into his stats using *Sabermetrics*.
+
+Let's find his OBP (on-base percentage), SLG (slugging percentage) and OPS (on-base plus slugging) using data from Baseball Reference <http://www.baseball-reference.com/players/t/troutmi01-bat.shtml>.
+
+#### OBP
+On-base percentage (OBP) finds how often a batter reaches base. It is often reported as 0.123 instead of an actual percent. It is found using: ((H+BB+HBP)/(AB+BB+SF+HBP))
+
+For the 2014 season, Trout had:
+173 Hits (H)
+83 Bases on balls (BB)
+10 Hit by pitch (HBP)
+602 At bats (AB)
+10 Sacrifice flies (SF)
+
+In *Sabermetrics*, the obp() function can find the OBP given H, BB, HBP, AB, SF as arguments in that order. You should get 0.377305 as Trout's OBP.
+
+```{r, eval=FALSE}
+obp(173,83,10,602,10) # 0.377305
+```
+
+#### SLG
+Slugging percentage (SLG) is a popular measure of the power of a hitter
+
+In *Sabermetrics*, the slugging percentage function, slg(), takes two arguments, TB and AB in that order. It divides TB by AB.
+
+For 2014, Trout had 338 Total Bases (TB) and 602 At Bats (AB). Using slg(), you should get Trout's slugging percentage at 0.5614518
+
+```{r, eval=FALSE}
+slg(338,602) # 0.5614518
+```
+
+#### OPS
+OPS, on-base plus slugging, is just an overall measure of the accuracy and power of a hitter. It simply adds OBP to SLG. The ops() function takes slugging percentage and on-base percentage as arguments, in that order. Trout's OPS should be 0.9387568
+
+```{r, eval=FALSE}
+ops(0.5614518,0.377305) # 0.9387568
+```
+
+### Moving On
+OBP, SLG, and OPS and some of the most common statistics. Most of, if not all of the time, you can find this data when pulling for things such as AB, H, etc.
+
+Here, we will talk about some lesser known statistics. The first of these is isolated power (ISO)
+
+#### Isolated Power
+Isolated power is a metric used to find a batter's raw power. In *Sabermetrics* the iso() function takes two arguments, slugging percentage and batting average in that order. Let's find Trout's isolated power. You should get 0.274
+
+```{r, eval=FALSE}
+iso(0.561,0.287) # 0.274
+```
+
+#### wOBA
+wOBA, weighted on-base average, is a statistic to measure a player's offensive output per plate contribution
+The wOBA formula is seen below. RBOE stands for reached base on error, and PA stands for plates appearances
+
+wOBA = ((0.72*BB)+(0.75*HBP)+(0.90*SINGLE)+(0.92*RBOE)+(1.24*DOUBLE)+(1.56*TRIPLE)+(1.95*HR))/PA
+
+Let's say Trout had 83 BB, 10 HBP,  100 singles, 10 RBOE, 39 doubles, 9 triples, 36 home runs, and 705 plate appearances.
+
+You would find his wOBA as follows (the output should be 0.4241986 
+```{r, eval=FALSE}
+wOBA(83,10,100,10,39,9,36,705) # 0.4241986
+```

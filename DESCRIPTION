@@ -1,0 +1,13 @@
+Package: Sabermetrics
+Type: Package
+Title: Sabermetrics Functions For Baseball Analytics
+Version: 1.0
+Date: 2015-02-06
+Author: Peter Xenopoulos <www.peterxeno.com>
+Maintainer: Peter Xenopoulos <peter.xenopoulos@pomona.edu>
+Description: A collection of baseball analytics functions for sabermetrics purposes. Among these functions include popular metrics such as OBP, wOBA, runs created functions as well as field-independent pitching metrics.
+License: GPL-3
+Packaged: 2015-02-06 21:37:56 UTC; pxenopoulos
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2015-02-07 00:55:03
