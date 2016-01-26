@@ -5,7 +5,7 @@
 On-Base Percentage
 }
 \description{
-Function to calculate the on-base percentage of a player/team
+The OBP function calculates how often a player gets on base.
 }
 \usage{
 obp(H, BB, HBP, AB, SF)
@@ -13,52 +13,49 @@ obp(H, BB, HBP, AB, SF)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{H}{
-Hits
+Number of Hits
 }
-\item{BB}{
-Unintentional Walks
+  \item{BB}{
+Number of bases on balls (walks)
 }
-\item{HBP}{
-Hit by pitch
+  \item{HBP}{
+Number of hit by pitches
 }
-\item{AB}{
-At bats
+  \item{AB}{
+Number of at bats}
+  \item{SF}{
+Number of sacrifice flies
 }
-\item{SF}{
-Sacrifice flies
-}
-}
-\details{
-On-base percentage is used to figure out how often an entity gets on-base
 }
 \value{
-Returns the following: ((H+BB+HBP)/(AB+BB+SF+HBP))
+Returns a numerical value equal to ((H+BB+HBP)/(AB+BB+SF+HBP))
 }
 \references{
-\cite{http://en.wikipedia.org/wiki/On-base_percentage}
+https://en.wikipedia.org/wiki/On-base_percentage
 }
 \author{
-Peter Xenopoulos 
+Peter Xenopoulos
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+\link{ops}
 }
 \examples{
-## The on-base percentage (obp) function is currently defined as
+## Let's calculate Mike Trout's OBP for the 2014 season
+## He had 173 hits, 83 bases on balls, 10 hit by pitches, 602 at bats, and 10 sacrifice flies
+## We should get 0.377 as our output
+obp(173,83,10,602,10)
 
+## The function is currently defined as
 function (H, BB, HBP, AB, SF) 
 {
-  onbase <- ((H+BB+HBP)/(AB+BB+SF+HBP))
-  return(onbase)
+    onbase <- ((H + BB + HBP)/(AB + BB + SF + HBP))
+    return(onbase)
+  }
 }
-  
-## Let's take 2014's MLB MVP, Mike Trout, and find his on-base percentage
-## Stats for Mike Trout available on
-## http://www.baseball-reference.com/players/t/troutmi01-bat.shtml
-## For 2014, Trout had 173 H, 83 BB, 10 HBP, 602 AB, 10 SF
-## The formula for his on-base percentage using the obp function is below
-## Output should be 0.377305
-obp(173,83,10,602,10)
-}
-\seealso{
-Slugging Percentage \link{slg}, OPS \link{ops} and Isolated Power \link{iso}}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ on base percentage }
+\keyword{obp}
+\keyword{on base percentage}% __ONLY ONE__ keyword per line

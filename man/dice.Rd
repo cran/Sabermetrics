@@ -2,52 +2,53 @@
 \alias{dice}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Defense-Independent Component ERA (DICE)}
+Defense-Independent Component ERA}
 \description{
-A function gives a number that is better at predicting a pitcher's ERA in the following year than the pitcher's actual ERA in the current year.}
+DICE represents a way to measure a pitcher's performance on the ERA scale using only events a pitcher can "control"}
 \usage{
-dice(HR, BB, HBP, K, IP)
+dice(hr, bb, hbp, k, ip)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{HR}{
-Home Runs Allowed}
-\item{BB}{
-Walks Allowed}
-\item{HBP}{
-Batters Hit}
-\item{K}{
+  \item{hr}{
+Home Runs}
+  \item{bb}{
+Walks}
+  \item{hbp}{
+Hit By Pitches}
+  \item{k}{
 Strikeouts}
-\item{IP}{
+  \item{ip}{
 Innings Pitched}
 }
+\details{
+DICE uses the typical ERA scale.}
 \value{
-Returns 3 + ((13*HR+3*BB+3*HBP-2*K)/IP)
+Returns a value equal to (13*hr+3*bb+3*hbp-2*k)/ip + 3.0
 }
 \references{
-\cite{http://en.wikipedia.org/wiki/Defense_independent_pitching_statistics} }
+https://en.wikipedia.org/wiki/Defense-Independent_Component_ERA}
 \author{
-Peter Xenopoulos }
-
-\examples{
-## Defense-Independent Component ERA (dice) function is currently defined as
-function (HR, BB, HBP, K, IP) 
-{
-    defenseERA <- 3 + ((13 * HR + 3 * BB + 3 * HBP - 2 * K)/IP)
-    return(defenseERA)
-  }
-  
-## Let's take 2014's MLB MVP, Clayton Kershaw, and find his DICE
-## Stats for Clayton Kershaw available on
-## http://www.baseball-reference.com/players/k/kershcl01-pitch.shtml
-## For 2014, Kershaw allowed 9 HR, 31 BB, 2 HBP, 239 K, and 198.1 IP
-## The formula for his DICE using the dice function is below
-## Output should be 1.677436
-dice(9,31,2,239,198.1)
+Peter Xenopoulos
 }
+\note{
+Innings Pitched  (IP) is commonly reported with .1 indicating 1/3 of an inning and .2 indicating 2/3 of an inning. In order for this function to be accurate, please change the decimal to .333 for 1/3 of an inning and .666 for 2/3 of an inning.
+}
+
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
+\seealso{
+\link{era},\link{fip},\link{xfip},\link{whip}}
+\examples{
+
+## The function is currently defined as
+function (hr, bb, hbp, k, ip) 
+{
+    dice = (13 * hr + 3 * bb + 3 * hbp - 2 * k)/ip + 3
+    return(dice)
+  }
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ dips }
-\keyword{ dice }% __ONLY ONE__ keyword per line
+\keyword{ dice }
+\keyword{ defense independent pitching }% __ONLY ONE__ keyword per line

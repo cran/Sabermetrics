@@ -4,27 +4,51 @@
 \title{
 Pythagorean Expectation}
 \description{
-Pythagorean expectation is a formula invented by Bill James to estimate how many games a baseball team "should" have won based on the number of runs they scored and allowed.}
+Pythagorean expectation portrays what a team's winning percentage "should" be given it's runs scored and allowed.}
 \usage{
-pyth(RS, RA)
+pyth(rs, ra, alpha = 2)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{RS}{
+  \item{rs}{
 Runs Scored}
-  \item{RA}{
+  \item{ra}{
 Runs Allowed}
+  \item{alpha}{
+Exponent to use}
 }
+\details{
+2 and 1.83 are the most common exponents used. 1.83 is the exponent baseball-reference uses in its calculations.}
 \value{
-Returns (RS*RS)/((RS*RS)+(RA*RA))
+Returns a value equal to (rs^alpha)/(rs^alpha + ra^alpha)
 }
 \references{
-\cite{http://en.wikipedia.org/wiki/Pythagorean_expectation}}
+http://www.fangraphs.com/library/principles/expected-wins-and-losses/
+https://en.wikipedia.org/wiki/Pythagorean_expectation}
 \author{
-Peter Xenopoulos }
+Peter Xenopoulos}
+\note{
+Pythagorean expectation can be used in a multitude of sports like basketball and football
+}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
+\seealso{
+\link{log5}}
+\examples{
+## Let's calculate the Angels 2014 Pythagorean Expectation
+## The Angels had 773 Runs Scored and 630 Runs Allowed
+## We should get an output close to .600
+pyth(773,630,2)
+
+## The function is currently defined as
+function (rs, ra, alpha = 2) 
+{
+    pyth <- (rs^alpha)/(rs^alpha + ra^alpha)
+    return(pyth)
+  }
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ pythagorean expectation }
+\keyword{ pythagorean }
+\keyword{ pyth }% __ONLY ONE__ keyword per line
